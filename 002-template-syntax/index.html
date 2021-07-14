@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template Syntax</title>
+    <link rel="stylesheet" href="../assets/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="box">{{ message }}</div>
+
+      <div class="box">{{ isOk ? 'ok' : 'not ok'  }}</div>
+
+      <div class="box">{{ message.split('').reverse().join('')  }}</div>
+      
+      <input type="text" :disabled="isDisabled" />
+      <button @click="isDisabled = !isDisabled">Disable/Enable</button>
+
+      <div v-html="rawHtml">123</div>
+
+
+      <div class="tab-container">
+        <div class="tab-header">
+          <button @click="currentTab = 1">Register</button>
+          <button @click="currentTab = 2">Login</button>
+        </div>
+        <div class="tab-body">
+          <div class="box register" v-if="currentTab === 1">
+            <h3>Register</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+              illo rem consectetur eaque in aspernatur consequatur. Ipsa nulla
+              unde esse aperiam debitis necessitatibus fugit rem reprehenderit
+              beatae adipisci, veniam distinctio?
+            </p>
+          </div>
+          <div class="box login" v-if="currentTab === 2">
+            <h3>Login</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+              eaque reprehenderit, nulla dolor eum, quis voluptates doloremque
+              ex pariatur laboriosam recusandae fuga necessitatibus labore animi
+              non. Aut earum facilis minus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/vue.3.1.4.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            message: 'welcome to my app',
+            isOk: false,
+            isDisabled: false,
+            rawHtml: '<div class="box">the source of this <i>tag</i> placed in <strong>data()</strong> function</div>',
+            currentTab: 1
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

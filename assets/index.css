@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px;
+  border: 2px solid royalblue;
+  outline: none;
+}
+input:disabled {
+  background: #eee;
+  border: 2px solid dimgrey;
+}
+input:disabled:hover {
+  cursor: not-allowed;
+}
+button {
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0px 1px #484bf5;
+  background: #899cf3;
+  color: #fff;
+  cursor: pointer;
+}
+button:active {
+  transform: translateY(1px);
+}
+.box {
+  padding: 10px 30px;
+  margin: 20px 10px;
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0px 5px #dddddd;
+  user-select: none;
+  background: #fd746c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff9068,
+    #fd746c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff9068,
+    #fd746c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box:nth-child(n+2) {
+  background: #6a3093; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a044ff,
+    #6a3093
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #a044ff,
+    #6a3093
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box.register {
+  background: #005c97; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #363795,
+    #005c97
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #363795,
+    #005c97
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box.login{
+  background: #e53935; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #e35d5b,
+    #e53935
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #e35d5b,
+    #e53935
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.tab-header {
+  border-bottom: 2px solid #bbbbbb;
+}
+.tab-header button {
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #505050;
+  position: relative;
+}
+button.active::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: red;
+  position: absolute;
+  left:0;
+  bottom: -2px;
+}

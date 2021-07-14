@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Properties and methods</title>
+  <link rel="stylesheet" href="../assets/index.css">
+</head>
+<body>
+  
+  <div id="app">
+    <button @click="increment">increment</button>
+    {{ count }}
+    <button @click="decrement">decrement</button>
+  </div>
+
+
+  <script src="../assets/vue.3.1.4.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return {
+          count: 0,
+        }
+      },
+      methods:{
+        increment(){
+          this.count++
+        },
+        decrement(){
+          this.count--
+        },
+      }
+    });
+    const vm = app.mount("#app");
+    // vm.count = 5
+    // vm.$data.count = 10
+    // console.log(vm.count) // => 0
+    // console.log(vm.$data.count) // => 0
+  </script>
+</body>
+</html>

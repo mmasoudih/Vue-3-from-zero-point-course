@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Vue App</title>
+</head>
+<body>
+  
+  <div id="myApp">
+    the message is: {{ message }} - {{ count }}
+  </div>
+
+  <script src="../assets/vue.3.1.4.js"></script>
+  <script>
+    
+
+    const app = Vue.createApp({
+      data(){
+        return {
+          message: 'this is my first vue app!',
+          count: 0
+        }
+      },
+      created(){
+        console.log('created lifecycle hook')
+      }
+      
+    });
+    app.mount('#myApp');
+
+  </script>
+</body>
+</html>
