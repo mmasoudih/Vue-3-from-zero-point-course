@@ -2,7 +2,7 @@
   <h1>دوره ویو از نقطه صفر</h1>
   <p>فایل های دوره ویو از نقطه صفر در این مخزن قرار داده می‌شوند</p>
   
-  <h3>لینک ویدیو ها در یوتیوب: </h3>
+  <h3>لینک ویدیو ها در یوتیوب:  <a href="https://youtube.com/playlist?list=PLft1NSHxb8W3jrgSxz1I3Wt67l0zFcVXX">(لینک پلی‌لیست کامل دوره)</a></h3>
   <ul>
     <li>
       <a href="https://youtu.be/k8H8JdkYF74" target="_blank">قسمت اول</a>
