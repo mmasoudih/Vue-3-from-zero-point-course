@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditional Rendering</title>
+    <link rel="stylesheet" href="../assets/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      value is : {{ value }}
+      <div class="box" v-if="value < 20">box 1</div>
+      <div class="box bg-blue" v-else-if="value > 80">box 2</div>
+      <div class="box" v-else>box 3</div>
+      
+
+      <template v-if="true">
+        <h1>this my heading</h1>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem debitis
+          ea modi dolore sit nesciunt tempore, distinctio error deleniti quia
+          itaque impedit molestias libero blanditiis! Ad quod facilis quas
+          assumenda!
+        </h3>
+        <p>this is another paragraph</p>
+      </template>
+
+      <div class="box bg-blue" v-show="show">v-show</div>
+
+      
+
+      <button @click="value = value * 2">value * 2</button>
+      <button @click="value = value / 2">value / 2</button>
+      <button @click="show = !show">toggle show</button>
+
+    </div>
+
+    <script src="../assets/vue.3.1.4.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            value: 10,
+            show: false
+          };
+        },
+      });
+      const vm = app.mount("#app");
+    </script>
+  </body>
+</html>

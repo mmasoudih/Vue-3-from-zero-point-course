@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class and Style Binding</title>
+    <link rel="stylesheet" href="../assets/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="box" :class="[ value > 22 ? 'line-over-text bg-blue' : '' ]"> this is another box </div>
+      <div class="box" :class="classObject"> this is another box </div>
+      <div class="box" :style="{ fontSize: `${value}px` }">my text</div>
+      <!-- { fontSize: `${value}px` } -->
+      <!-- { fontSize: value + 'px' } -->
+      
+
+      <button @click="value++"> + </button>
+      <button @click="value--"> - </button>
+    </div>
+
+    <script src="../assets/vue.3.1.4.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            value: 20,
+            
+          };
+        },
+        computed:{
+          classObject(){
+            return {
+              'bg-blue': this.value > 25
+            }
+          }
+        }
+      });
+      const vm = app.mount("#app");
+    </script>
+  </body>
+</html>

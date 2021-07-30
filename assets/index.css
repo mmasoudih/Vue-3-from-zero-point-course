@@ -19,13 +19,14 @@ input:disabled:hover {
   cursor: not-allowed;
 }
 button {
-  padding: 7px 10px;
+  padding: 7px 20px;
   border-radius: 5px;
   border: none;
   box-shadow: 0 0px 1px #484bf5;
   background: #899cf3;
   color: #fff;
   cursor: pointer;
+  margin: 0 5px;
 }
 button:active {
   transform: translateY(1px);
@@ -49,7 +50,7 @@ button:active {
     #fd746c
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.box:nth-child(n+2) {
+.box:nth-child(even) {
   background: #6a3093; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -75,7 +76,7 @@ button:active {
     #005c97
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.box.login{
+.box.login {
   background: #e53935; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -98,13 +99,29 @@ button:active {
   color: #505050;
   position: relative;
 }
-button.active::after{
-  content: '';
+button.active::after {
+  content: "";
   display: block;
   width: 100%;
   height: 2px;
   background: red;
   position: absolute;
-  left:0;
+  left: 0;
   bottom: -2px;
+}
+.line-over-text {
+  text-decoration: line-through;
+}
+.bg-blue {
+  background: #005c97 !important; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #363795,
+    #005c97
+  ) !important; /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #363795,
+    #005c97
+  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
