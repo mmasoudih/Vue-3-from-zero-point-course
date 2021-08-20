@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Rendering</title>
+    <link rel="stylesheet" href="../assets/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- <ul>
+        <li v-for="(item, index) in numbers">
+          index is: {{ index }} - {{ item }}
+        </li>
+      </ul> -->
+
+      <div class="user-box">
+        <div class="user-item" v-for="user in users" :key="user.id">
+          <div class="user-information">
+            <img :src="user.avatar" />
+            <span>{{ user.name }}</span>
+          </div>
+        </div>
+      </div>
+
+      <ul>
+        <li v-for="(value, name, index) in singleUser">
+          {{ index }}. {{ name }}: {{value}}
+        </li>
+      </ul>
+
+      <ul>
+        <li v-for="x in 10">
+          {{ x }}
+        </li>
+      </ul>
+
+      <ul>
+        <li v-for="x in evenNumbers">
+          even number :{{ x }}
+        </li>
+      </ul>
+
+      
+      
+
+      
+
+    </div>
+
+    <script src="../assets/vue.3.1.4.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            numbers: [1, 2, 3, 4, 5],
+            users: [
+              {
+                id: 1,
+                name: "Mohammad Masoudi",
+                avatar:
+                  "https://ui-avatars.com/api/?name=Mohammad+Masoudi&background=9158ec&color=fff",
+              },
+              {
+                id: 2,
+                name: "Ali Hasani",
+                avatar:
+                  "https://ui-avatars.com/api/?name=Ali+Hasani&background=9158ec&color=fff",
+              },
+              {
+                id: 3,
+                name: "Hossein Aliabadi",
+                avatar:
+                  "https://ui-avatars.com/api/?name=Hossein+Aliabadi&background=9158ec&color=fff",
+              },
+            ],
+            singleUser: {
+              id: 3,
+              name: "Hossein Aliabadi",
+              avatar:
+                "https://ui-avatars.com/api/?name=Hossein+Aliabadi&background=9158ec&color=fff",
+            },
+          };
+        },
+        computed:{
+          evenNumbers(){
+            return this.numbers.filter(number => number % 2 === 0)
+          }
+        }
+      });
+      const vm = app.mount("#app");
+    </script>
+  </body>
+</html>

@@ -125,3 +125,36 @@ button.active::after {
     #005c97
   ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+ul {
+  padding: 10px 0 0 40px;
+}
+ul li {
+  padding: 5px 5px;
+}
+.user-box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.user-item {
+  padding: 20px;
+  width: 100%;
+  border: 2px solid #ddd;
+  margin: 5px 0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.user-item:hover {
+  border: 2px solid #c2c2c2;
+  background: #e5d8fa;
+}
+.user-item img {
+  border-radius: 50%;
+}
+.user-information {
+  display: flex;
+  align-items: center;
+}
+.user-information span {
+  padding: 0 10px;
+}

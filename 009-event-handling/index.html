@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling</title>
+    <link rel="stylesheet" href="../assets/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="box">{{ value }}</div>
+      <button @click.once="changeValue">click me</button>
+      <input type="text" @keyup.enter="showMessage">
+
+      <button @click.ctrl.exact="onCtrlClick">A</button>
+
+     
+    </div>
+
+    <script src="../assets/vue.3.1.4.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            value: 10
+          };
+        },
+        methods:{
+          changeValue(event){
+            this.value += 10
+            console.log('the value is:', this.value)
+            console.log(event)
+          },
+          showMessage(e){
+            alert('you pressed enter !')
+            console.log(e)
+            // console.log('this method also run ...')
+          },
+          onCtrlClick(e){
+            console.log(e)
+
+          }
+        }
+      });
+      const vm = app.mount("#app");
+    </script>
+  </body>
+</html>
