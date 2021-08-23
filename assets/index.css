@@ -1,10 +1,12 @@
+@import "https://cdn.jsdelivr.net/npm/vazir-font@30.1.0/dist/Farsi-Digits/font-face-FD.css";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-input {
+input,
+textarea {
   padding: 5px 10px;
   border-radius: 5px;
   margin: 10px;
@@ -157,4 +159,191 @@ ul li {
 }
 .user-information span {
   padding: 0 10px;
+}
+
+/* signup form  */
+#signup-form {
+  width: 400px;
+  margin: 0 auto;
+  direction: rtl;
+}
+#signup-form header {
+  font-family: Vazir FD;
+  font-weight: 300;
+  font-size: 28px;
+  text-align: center;
+  padding: 20px 0;
+  color: #92adfc;
+}
+#signup-form .field > button {
+  width: 100%;
+  margin: 10px 0;
+  font-family: Vazir FD;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.field > label {
+  display: block;
+  font-family: Vazir FD;
+  font-weight: 300;
+  padding: 10px 0 3px 0;
+}
+.field input,
+textarea {
+  width: 100%;
+  margin: 0;
+  font-family: Vazir FD;
+}
+.checkbox-field {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.checkbox-field input {
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.checkbox-field label {
+  font-family: Vazir FD;
+  font-weight: 100;
+  cursor: pointer;
+  user-select: none;
+  color: #3a3a3a;
+}
+.d-flex {
+  display: flex;
+}
+.space-around {
+  justify-content: space-between;
+}
+.no-resize {
+  resize: none;
+}
+.radio-field {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.radio-field input {
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.radio-field label {
+  font-family: Vazir FD;
+  font-weight: 100;
+  cursor: pointer;
+  user-select: none;
+  color: #3a3a3a;
+}
+/* animate radio button */
+
+.animated-inputs {
+  padding: 1em 0;
+  position: relative;
+  text-align: left;
+}
+
+.animated-inputs label {
+  display: inline-block;
+  position: relative;
+  padding: 0 30px 0 0;
+  vertical-align: top;
+  color: #000000;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.animated-inputs input[type="checkbox"],
+.animated-inputs input[type="radio"],
+.animated-inputs label::before {
+  width: 25px;
+  height: 25px;
+  right: 0;
+  position: absolute;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.animated-inputs input[type="checkbox"],
+.animated-inputs input[type="radio"] {
+  opacity: 0;
+  appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 100;
+}
+
+.animated-inputs label::before {
+  content: "";
+  border: 2px solid royalblue;
+  transition: opacity 0.3s ease;
+}
+
+.radio label::before {
+  border-radius: 50%;
+}
+
+.animated-inputs input[type="checkbox"]:checked + label,
+.animated-inputs input[type="radio"]:checked + label {
+  color: #292929;
+}
+
+.animated-inputs input[type="checkbox"]:checked + label::before,
+.animated-inputs input[type="radio"]:checked + label::before {
+  border: 2px solid #2a53cf;
+}
+
+/* General SVG and path styles */
+.animated-inputs svg {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  right: 3px;
+  top: 4px;
+  pointer-events: none;
+}
+
+.animated-inputs svg path {
+  stroke: #7b99f3;
+  stroke-width: 13px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transition: 0.8s stroke-dasharray ease, 0.8s stroke-dashoffset ease,
+    0.8s stroke ease;
+}
+
+/* Radio */
+.radio input[type="radio"] + label svg path {
+  stroke-dasharray: 490px 600px;
+  stroke-dashoffset: 491px;
+  transition: 0.8s stroke-dasharray ease, 0.8s stroke-dashoffset ease,
+    0.8s stroke ease;
+}
+
+.radio input[type="radio"]:checked + label svg path {
+  stroke-dashoffset: 0px;
+}
+
+/* Check */
+.checkbox input[type="checkbox"] + label svg path {
+  stroke-dasharray: 100px 200px;
+  stroke-dashoffset: 101px;
+  transition: 0.2s stroke-dasharray ease, 0.2s stroke-dashoffset ease,
+    0.2s stroke ease;
+}
+
+.checkbox input[type="checkbox"]:checked + label svg path {
+  stroke-dashoffset: 0px;
 }
