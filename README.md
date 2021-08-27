@@ -1,4 +1,4 @@
-![course cover](./../screenshot.png)
+![course cover](./screenshot.png)
 
 <div dir="rtl">
   <h1>دوره ویو از نقطه صفر</h1>
