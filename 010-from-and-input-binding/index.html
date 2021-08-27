@@ -9,31 +9,43 @@
   </head>
 
   <div id="app">
+   
+    <pre> {{ signUpForm }} </pre>
     <div class="container">
       <form id="signup-form">
         <header>نام‌نویسی در سایت</header>
         <div class="d-flex space-around">
           <div class="field">
             <label for="firstname">نام</label>
-            <input type="text" id="firstname" />
+            <input type="text" id="firstname" v-model.lazy.trim="signUpForm.firstname"/>
           </div>
 
           <div class="field">
             <label for="lastname">نام خانوادگی</label>
-            <input type="text" id="lastname" />
+            <input type="text" id="lastname" v-model.trim="signUpForm.lastname"/>
           </div>
         </div>
 
         <div class="field">
           <label for="age">سن</label>
-          <input type="number" id="age" />
+          <input type="number" id="age" v-model.number="signUpForm.age" />
+        </div>
+        <div class="field">
+          <label for="skill">میزان مهارت</label>
+          <select id="skill" v-model="signUpForm.skill">
+            <option disabled value="">مهارت خودتون رو انتخاب کنین</option>
+            <!-- <option value="low">کم</option>
+            <option value="medium">متوسط</option>
+            <option value="high">زیاد</option> -->
+            <option v-for="option in oprtionsData" :value="option.value" :key="option.id">{{ option.text }}</option>
+          </select>
         </div>
 
         <div class="field radio">
           <label>جنسیت</label>
 
           <div class="radio-field animated-inputs">
-            <input type="radio" name="gender" id="male" value="male" />
+            <input type="radio" name="gender" id="male" value="male" v-model="signUpForm.gender" />
             <label for="male"
               >آقا
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +60,7 @@
             </label>
           </div>
           <div class="radio-field animated-inputs">
-            <input type="radio" name="gender" id="female" value="female" />
+            <input type="radio" name="gender" id="female" value="female" v-model="signUpForm.gender"/>
             <label for="female"
               >خانم
 
@@ -69,7 +81,7 @@
           <label>رنگ های مورد علاقه</label>
 
           <div class="checkbox-field animated-inputs">
-            <input type="checkbox" id="red" />
+            <input type="checkbox" id="red" value="red" v-model="signUpForm.favColors" />
             <label for="red"
               >قرمز
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +92,7 @@
             </label>
           </div>
           <div class="checkbox-field animated-inputs">
-            <input type="checkbox" id="blue" />
+            <input type="checkbox" id="blue" value="blue" v-model="signUpForm.favColors"/>
             <label for="blue"
               >آبی
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +103,7 @@
             </label>
           </div>
           <div class="checkbox-field animated-inputs">
-            <input type="checkbox" id="orange" />
+            <input type="checkbox" id="orange" value="orange" v-model="signUpForm.favColors"/>
             <label for="orange"
               >نارنجی
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -105,9 +117,22 @@
 
         <div class="field">
           <label for="about_me">درباره من</label>
-          <textarea id="about_me" class="no-resize" rows="5"></textarea>
+          <textarea id="about_me" class="no-resize" rows="5" v-model="signUpForm.aboutMe"></textarea>
         </div>
 
+        <div class="field checkbox">
+          <div class="checkbox-field animated-inputs">
+            <input type="checkbox" id="terms" v-model="signUpForm.terms" true-value="yes" false-value="no"/>
+            <label for="terms"
+              >با قوانین و مقررات سایت موافق هستم.
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22.3,61.3c5.7,4.1,13.2,11.8,16.7,18C53,60.5,66,41,77.7,20.8"
+                />
+              </svg>
+            </label>
+          </div>
+        </div>
         <div class="field">
           <button>نام‌نویسی</button>
         </div>
@@ -118,7 +143,35 @@
   <body>
     <script src="../assets/vue.3.1.4.js"></script>
     <script>
-      const app = Vue.createApp({});
+      const app = Vue.createApp({
+        data() {
+          return {
+            signUpForm: {
+              firstname: '',
+              lastname: '',
+              age: '',
+              skill: '',
+              gender: '',
+              favColors: [],
+              aboutMe: '',
+              terms: ''
+            },
+            oprtionsData:[
+              { id: 1, text: 'کم', value:'low'},
+              { id: 2, text: 'متوسط', value:'medium'},
+              { id: 3, text: 'خیلی', value:'high'},
+            ],
+          };
+        },
+        watch:{
+          signUpForm:{
+            handler: (newVal, oldValue) =>{
+              console.log(typeof newVal.age)
+            },
+            deep: true
+          }
+        }
+      });
       const vm = app.mount("#app");
     </script>
   </body>

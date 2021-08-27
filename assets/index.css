@@ -33,6 +33,22 @@ button {
 button:active {
   transform: translateY(1px);
 }
+pre{
+  padding: 10px;
+  letter-spacing: 2px;
+  line-height: 2em;
+  text-align: left;
+}
+select{
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border-radius: 5px;
+  font-family: Vazir FD;
+  background-color: #fff;
+  border: 2px solid royalblue;
+  padding: 0 10px;
+}
 .box {
   padding: 10px 30px;
   margin: 20px 10px;
