@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Components Basics</title>
+    <link rel="stylesheet" href="../assets/index.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <div id="app">
+    <div class="container">
+      <div id="todo-list">
+        <div class="todo-header">
+          <h1>لیست وظایف روزانه</h1>
+        </div>
+        <div class="todo-body">
+          
+          <div class="todo-items">
+            <div class="todo-item">
+              <p contenteditable="true"> ضبط قسمت جدید دوره Vue.js </p>
+              <button class="delete-button">
+                <span class="material-icons">delete_outline</span>
+              </button>
+            </div>
+            
+          </div>
+          <div class="todo-input">
+            <input type="text" placeholder="یه چیزی بنویس اینجا"/>
+            <button>اضافه کردن</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <body>
+    <script src="../assets/vue.3.1.4.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {};
+        },
+      });
+      const vm = app.mount("#app");
+    </script>
+  </body>
+</html>

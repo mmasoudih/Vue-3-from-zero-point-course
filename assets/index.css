@@ -33,13 +33,13 @@ button {
 button:active {
   transform: translateY(1px);
 }
-pre{
+pre {
   padding: 10px;
   letter-spacing: 2px;
   line-height: 2em;
   text-align: left;
 }
-select{
+select {
   width: 100%;
   height: 40px;
   outline: none;
@@ -362,4 +362,71 @@ textarea {
 
 .checkbox input[type="checkbox"]:checked + label svg path {
   stroke-dashoffset: 0px;
+}
+
+/* todo list styles */
+#todo-list {
+  width: 400px;
+  margin: 10vh auto;
+  text-align: center;
+  background: #dfe5fc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #f3f3f3,
+    #dfe5fc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #f3f3f3,
+    #dfe5fc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-radius: 5px;
+  box-shadow: 0 0 6px #d8d8d8;
+  direction: rtl;
+  padding-top: 20px;
+}
+#todo-list h1 {
+  color: #3e3f42;
+  text-shadow: 0 0 5px #f5f5f5;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #042aff23;
+  padding-bottom: 20px;
+}
+.todo-input input,
+.todo-input button,
+.todo-item p,
+#todo-list h1 {
+  font-family: Vazir FD;
+}
+.todo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+.todo-item p {
+  padding: 5px 10px;
+  font-weight: lighter;
+  outline-color: #7ca5ff;
+  transition: all 0.5s;
+}
+.todo-item p:focus{
+  color: #000000;
+  font-weight: bold;
+}
+
+.todo-item .delete-button {
+  all: unset;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+.todo-item:hover > .delete-button {
+  visibility: visible;
+  opacity: 1;
+}
+.todo-item .delete-button span {
+  color: #ff6565;
 }
