@@ -6,36 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Components Basics</title>
     <link rel="stylesheet" href="../assets/index.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
   </head>
 
   <div id="app">
-    <div class="container">
-      <div id="todo-list">
-        <div class="todo-header">
-          <h1>لیست وظایف روزانه</h1>
-        </div>
-        <div class="todo-body">
-          
-          <div class="todo-items">
-            <div class="todo-item">
-              <p contenteditable="true"> ضبط قسمت جدید دوره Vue.js </p>
-              <button class="delete-button">
-                <span class="material-icons">delete_outline</span>
-              </button>
-            </div>
-            
-          </div>
-          <div class="todo-input">
-            <input type="text" placeholder="یه چیزی بنویس اینجا"/>
-            <button>اضافه کردن</button>
-          </div>
-        </div>
-      </div>
+    <btn-counter btn-title="this is my btn"></btn-counter>
+
+    <btn-counter btn-title="another btn"></btn-counter>
+
+    <btn-counter></btn-counter>
+
+    <br /><br />
+
+    {{ fontValue }}
+
+    <div :style="{ fontSize: fontValue + 'px' }">
+      <blog-post
+        v-for="post in posts"
+        :key="post.id"
+        :title="post.title"
+        @increase-size="fontValue += $event"
+        @decrease-size="fontValue -= $event"
+      ></blog-post>
     </div>
+
+
+    {{ searchText }}
+    <custom-input v-model="searchText"></custom-input>
+    <br />
+
+    {{ searchText2 }}
+    <custom-input-2 v-model="searchText2"></custom-input-2>
+
+    
+    <br />
+    <alert-box type="Error !">
+      <span style="color: red"> this is an error </span>
+    </alert-box>
+
+    <br />
+
+    {{ currentTabComponent }}
+    <button
+      v-for="tab in tabs"
+      :key="tab"
+      :class="['tab-button', { active: currentTab === tab }]"
+      @click="currentTab = tab"
+    >
+      {{ tab }}
+    </button>
+    <component :is="currentTabComponent" class="tab"></component>
   </div>
 
   <body>
@@ -43,10 +62,101 @@
     <script>
       const app = Vue.createApp({
         data() {
-          return {};
+          return {
+            currentTab: "login",
+            tabs: ["login", "register"],
+            posts: [
+              { id: 1, title: "My journey with Vue" },
+              { id: 2, title: "Blogging with Vue" },
+              { id: 3, title: "Why Vue is so fun" },
+            ],
+            fontValue: 16,
+            searchText: "hello",
+            searchText2: "hello custom input 2",
+          };
+        },
+        computed: {
+          currentTabComponent() {
+            return "tab-" + this.currentTab;
+          },
         },
       });
-      const vm = app.mount("#app");
+
+      app.component("btn-counter", {
+        props: ["btnTitle"],
+        data() {
+          return {
+            value: 0,
+          };
+        },
+        methods: {
+          increase() {
+            this.value += 1;
+          },
+        },
+        template: `
+        <button @click="increase">
+          {{ btnTitle }} {{ value }}
+        </button>
+        `,
+      });
+
+      app.component("blog-post", {
+        props: ["title"],
+        emits: ["increaseSize", "decreaseSize"],
+        template: `
+        <button @click="$emit('increaseSize', 4)"> + </button>
+        <button @click="$emit('decreaseSize', 2)"> - </button>
+        <h4>{{ title }}</h4>
+        `,
+      });
+
+      app.component("custom-input", {
+        props: ["modelValue"],
+        emits: ["update:modelValue"],
+        template: `
+       <input
+          :value="modelValue"
+          @input="$emit('update:modelValue', $event.target.value)">
+       `,
+      });
+
+      app.component("custom-input-2", {
+        props: ["modelValue"],
+        emits: ["update:modelValue"],
+        computed: {
+          value: {
+            get() {
+              return this.modelValue;
+            },
+            set(value) {
+              this.$emit("update:modelValue", value);
+            },
+          },
+        },
+        template: `
+          <input v-model="value">
+       `,
+      });
+
+      app.component("alert-box", {
+        props: ["type"],
+        template: `
+        <div class="demo-alert-box">
+          <strong>{{ type }}</strong>
+          <slot></slot>
+        </div>
+        `,
+      });
+
+      app.component("tab-register", {
+        template: `<div class="demo-tab">register component</div>`,
+      });
+      app.component("tab-login", {
+        template: `<div class="demo-tab">login component</div>`,
+      });
+
+      app.mount("#app");
     </script>
   </body>
 </html>
