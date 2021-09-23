@@ -13,47 +13,47 @@
   </h3>
   <ul>
     <li>
-      <a href="https://youtu.be/k8H8JdkYF74" target="_blank">قسمت اول (معرفی دوره)</a>
+      <a href="https://youtu.be/k8H8JdkYF74" target="_blank">قسمت اول - معرفی دوره</a>
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/9LARFDUjDi8" target="_blank"> قسمت دوم (ساخت اولین برنامه)</a>
+      <a href="https://youtu.be/9LARFDUjDi8" target="_blank"> قسمت دوم - ساخت اولین برنامه</a>
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/ClcxyWagFUg" target="_blank">(template syntax) قسمت سوم</a>
+      <a href="https://youtu.be/ClcxyWagFUg" target="_blank">قسمت سوم - template syntax</a>
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/Id17tAXDOyE" target="_blank">(Data Properties and Methods) قسمت چهارم</a>
+      <a href="https://youtu.be/Id17tAXDOyE" target="_blank">قسمت چهارم - Data Properties and Methods</a>
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/tth_HGOoOPM" target="_blank">(Computed & Watchers ) قسمت پنجم</a>
+      <a href="https://youtu.be/tth_HGOoOPM" target="_blank">قسمت پنجم - Computed & Watchers</a>
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/_2oGVHbpMxI" target="_blank">(بایند کردن کلاس و استایل) قسمت ششم</a>
+      <a href="https://youtu.be/_2oGVHbpMxI" target="_blank">قسمت ششم - بایند کردن کلاس و استایل</a>
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/P4PYv_ESoqo" target="_blank"> (رندر شرطی) قسمت هفتم</a>
+      <a href="https://youtu.be/P4PYv_ESoqo" target="_blank">قسمت هفتم - رندر شرطی</a>
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/f61Eq9ohk-c" target="_blank">(رندر کردن لیست ها) قسمت هشتم</a>
+      <a href="https://youtu.be/f61Eq9ohk-c" target="_blank">قسمت هشتم - رندر کردن لیست ها</a>
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/cFlo8Tcab6U" target="_blank">( کار با رویداد ها) قسمت نهم</a>
+      <a href="https://youtu.be/cFlo8Tcab6U" target="_blank">قسمت نهم - کار با رویداد ها</a>
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/Sh0ybcVdHsU" target="_blank">(کار با فرم ها) قسمت دهم</a>
+      <a href="https://youtu.be/Sh0ybcVdHsU" target="_blank">قسمت دهم - کار با فرم ها</a>
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/GUFE8baYBHQ" target="_blank">(معرفی کامپوننت ها) قسمت یازدهم</a>
+      <a href="https://youtu.be/GUFE8baYBHQ" target="_blank">قسمت یازدهم - معرفی کامپوننت ها</a>
     </li>
     
   </ul>
