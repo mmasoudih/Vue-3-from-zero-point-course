@@ -11,28 +11,144 @@
   <body>
 
     <div class="app-container">
-      <h1 class="app-header">TO DO LIST</h1>
-      <div class="add-task">
-        <input type="text" autocomplete="off" placeholder="یه چیزی بنویس ..." class="task-input">
-        <input type="submit" value="" class="submit-task">
-      </div>
-      <ul class="task-list">
+      <h1 class="app-header">TO DO LIST
+      </h1>
+
+      <add-task v-model="newTodo" @add-todo="addNewTodo"></add-task>
+
+      <task-list :todos-list="filterdTodos" @remove-todo="removeTodo" @update-todo="updateTodo"></task-list>
+      
+      <filter-section></filter-section>
+    
+    </div>
+    <script src="../assets/vue.3.1.4.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data(){
+          return {
+            newTodo: '',
+            todos: [],
+            visibility: 'all'
+          }
+        },
+        methods:{
+          addNewTodo(){
+            this.todos.push({
+              id: this.makeId(),
+              name: this.newTodo,
+              done: false
+            });
+            this.newTodo = ''
+          },
+          removeTodo(todoId){
+            const index = this.todos.findIndex(item => item.id === todoId)
+            this.todos.splice(index, 1)
+          },
+          updateTodo(todo){
+            // console.log(todo.target.textContent)
+            const index = this.todos.findIndex(item => item.id === todo.todoId)
+            console.log(index)
+            this.todos[index].name = todo.event.target.textContent
+
+          },
+          makeId(){
+            return (Math.random() + 1).toString(36).substring(7)
+          }
+        },
+        computed: {
+          filterdTodos(){
+            return this.todos.filter(item => {
+              switch(this.visibility){
+                case 'all': 
+                  return item
+                  break;
+                case 'done':
+                  return item.done
+                  break;
+                case 'active':
+                  return !item.done
+              }
+            });
+          }
+        },
+        watch:{
+          todos:{
+            handler: (todo) => {
+              window.localStorage.setItem('todo-list', JSON.stringify(todo))
+            },
+            deep: true
+          }
+        },
+        mounted(){
+          this.todos = JSON.parse(window.localStorage.getItem('todo-list') || '[]')
+        }
+      });
+
+      app.component('add-task', {
+        props: ['modelValue'],
+        emits: ['update:modelValue', 'addTodo'],
+        template: `
+        <div class="add-task">
+          <input 
+            type="text"
+            autocomplete="off"
+            placeholder="یه چیزی بنویس ..."
+            class="task-input"
+            @input="$emit('update:modelValue', $event.target.value)"
+            @keyup.enter="$emit('addTodo')"
+            :value="modelValue">
+          <input type="button" class="submit-task" @click="$emit('addTodo')">
+        </div>
+        `
+      });
+
+      app.component('task-list',{
+        props: ['todosList'],
+        emits: ['removeTodo', 'updateTodo'],
+        template: `
+        <ul class="task-list">
+          <task-list-item
+            v-for="todo in todosList"
+            :key="todo.id"
+            :todo="todo"
+            @remove-todo="$emit('removeTodo', todo.id)"
+            @update-todo="$emit('updateTodo', {event: $event, todoId: todo.id})"></task-list-item>
+        </ul>
+        `
+      });
+
+      app.component('task-list-item', {
+        props: ['todo'],
+        emits: ['removeTodo', 'updateTodo'],
+        template: `
         <li class="task-list-item">
           <label class="task-list-item-label">
-            <input type="checkbox">
-            <span>ضبط قسمت جدید دوره ویو از نقطه صفر</span>
+            <input type="checkbox" v-model="todo.done">
+            <span contenteditable="true" @input="$emit('updateTodo', $event)"> {{ todo.name }} </span>
           </label>
-          <span class="delete-btn" title="حذف تسک"></span>
+          <span class="delete-btn" title="حذف تسک" @click="$emit('removeTodo')"></span>
         </li>
-        
-        
-      </ul>
-      <div class="filter-section">
-        <a href="">همه</a>
-        <a href="">تموم شده</a>
-        <a href="">تموم نشده</a>
-      </div>
-    </div>
+        `
+      });
 
+      app.component('filter-section', {
+        template: `
+        <div class="filter-section">
+          <a href="#/all">همه</a>
+          <a href="#/done">تموم شده</a>
+          <a href="#/active">تموم نشده</a>
+        </div>
+        `
+      })
+      const vm = app.mount('.app-container');
+
+      function onHashChange(){
+        const visibility = location.hash.replace('#/', '');
+        vm.visibility = visibility
+      }
+      window.addEventListener('hashchange' , onHashChange);
+      onHashChange();
+
+    </script>
   </body>
 </html>

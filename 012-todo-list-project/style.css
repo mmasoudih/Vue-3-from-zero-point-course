@@ -70,6 +70,21 @@ ul {
   cursor: pointer;
   box-shadow: 0 0 12px 0 var(--add-button-shadow);
 }
+.edit-task {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'%3E%3Ccircle style='fill:%236DC180;' cx='256' cy='256' r='256'/%3E%3Cpath style='fill:%235CA15D;' d='M256,0v512c141.385,0,256-114.615,256-256S397.385,0,256,0z'/%3E%3Cpolygon style='fill:%23F2F2F4;' points='219.429,367.932 108.606,257.108 147.394,218.32 219.429,290.353 355.463,154.32 394.251,193.108 '/%3E%3Cpolygon style='fill:%23DFDFE1;' points='256,331.361 394.251,193.108 355.463,154.32 256,253.782 '/%3E%3C/svg%3E");  
+  background-size: 32px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 12px 0 var(--add-button-shadow);
+}
 
 .add-task {
   height: 40px;
@@ -161,6 +176,17 @@ ul {
   height: 16px;
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ff3d46' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-trash-2'%3E%3Cpolyline points='3 6 5 6 21 6'/%3E%3Cpath d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'/%3E%3Cline x1='10' y1='11' x2='10' y2='17'/%3E%3Cline x1='14' y1='11' x2='14' y2='17'/%3E%3C/svg%3E");
+  background-size: 16px;
+  background-position: center;
+  cursor: pointer;
+}
+.edit-btn {
+  margin-left: 10px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'%3E%3Cpath style='fill:%23EFC377;' d='M183.49,328.51l-60.4-60.402c-3.359,3.359-5.243,7.91-5.244,12.66l0.002,42.494v52.986 c0,4.946,2.005,9.421,5.243,12.66c3.241,3.238,7.716,5.243,12.66,5.243h52.983l42.498,0.002c4.749,0,9.306-1.888,12.66-5.243 L183.49,328.51z'/%3E%3Cpolygon style='fill:%23F4D944;' points='397.604,184.562 362.521,149.479 327.438,114.399 302.122,89.079 123.089,268.108 183.49,328.51 243.89,388.912 422.92,209.88 '/%3E%3Cpath style='fill:%23DD539C;' d='M506.469,101.013l-47.742-47.742L410.987,5.53c-6.994-6.991-19.188-6.132-27.235,1.918L302.12,89.079 l25.316,25.318l35.083,35.083l35.081,35.081l0.002,0.002l25.315,25.316l81.635-81.631 C512.604,120.199,513.46,108.004,506.469,101.013z'/%3E%3Cpath style='fill:%23424EDE;' d='M488.727,232.729c-12.853,0-23.273,10.42-23.273,23.273v209.453H46.545V46.545H256 c12.853,0,23.273-10.42,23.273-23.273S268.853,0,256,0H23.273C10.42,0,0,10.42,0,23.273v465.455C0,501.58,10.42,512,23.273,512 h465.455C501.58,512,512,501.58,512,488.727V256.002C512,243.147,501.58,232.729,488.727,232.729z'/%3E%3Cpath style='fill:%23ECB555;' d='M123.089,388.911l60.4-60.4l-60.4-60.402c-3.359,3.359-5.243,7.91-5.244,12.66l0.002,42.494v52.986 C117.847,381.196,119.851,385.671,123.089,388.911z'/%3E%3Cpolygon style='fill:%23F1CC30;' points='362.521,149.479 327.438,114.399 302.122,89.079 123.089,268.108 183.49,328.51 '/%3E%3Cg%3E%3Cpolygon style='fill:%23DB348A;' points='397.604,184.562 422.92,209.88 397.605,184.562 '/%3E%3Cpath style='fill:%23DB348A;' d='M362.521,149.479l96.206-96.208L410.987,5.53c-6.994-6.991-19.188-6.132-27.235,1.918L302.12,89.079 l25.316,25.318L362.521,149.479z'/%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A");
   background-size: 16px;
   background-position: center;
   cursor: pointer;
