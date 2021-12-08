@@ -55,6 +55,14 @@
     <li>
       <a href="https://youtu.be/GUFE8baYBHQ" target="_blank">قسمت یازدهم - معرفی کامپوننت ها</a>
     </li>
+    <br />
+    <li>
+      <a href="https://youtu.be/shni8yfjP54" target="_blank">قسمت چهاردهم - راه اندازی پروژه با استفاده از محیط متنی و گرافیکی</a>
+    </li>
+    <br />
+    <li>
+      <a href="https://youtu.be/shni8yfjP54" target="_blank">قسمت چهاردهم - راه اندازی پروژه با استفاده از محیط متنی و گرافیکی</a>
+    </li>
     
   </ul>
 </div>

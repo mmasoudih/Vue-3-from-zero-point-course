@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="reveal.css" />
+    <link rel="stylesheet" href="theme/blood.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-transition="convex" data-background-color="#eee"> 
+          <section data-markdown>
+            <textarea data-template>
+
+              ## Vue.js / Nuxt.js
+
+              <span class="r-stack" style="display: inline-block;">
+                <img src="img/vue.png" class="fragment" alt="vue.js logo" width="250"/>
+              
+              </span>
+             
+              <span class="r-stack" style="display: inline-block;">
+              
+                <img src="img/nuxt.png" class="fragment"  alt="nuxt.js logo" width="250"/>
+              </span>
+             
+              ---
+              ### (SPA) اپلیکیشن های تک صفحه‌ای 
+              
+              <p class="fragment fade-left" style="font-size: 30px; direction: rtl;">
+                سایت های SPA یا سایت های تک صفحه ای به سایت هایی گفته میشود که یکبار فراخوانی میشود و عملیات جدید در صفحه بدون نیاز به ریفرش مرورگر یا فراخوانی دوباره ی صفحات انجام میگیرد. 
+              </p>
+              <p class="fragment fade-right" style="font-size: 30px; direction: rtl;"> 
+                مثال خوب برای درک بهتر سایت های SPA پیام رسان های تحت وب مثل نسخه ی وب تلگرام یا فیسبوک و ... است که بدون ریفرش شدن یا فراخوانی مجدد صفحه اطلاعات تغییر پیدا میکند.
+              </p>
+              ---
+              ### ماژول سیستم
+
+              <p class="fragment fade-up" style="font-size: 30px; direction: rtl;">
+                Module یا ماژول در لغت به معنی یک قطعه یا بخش است. زمانی که برنامه جاوا اسکریپتی ما بزرگتر و بزرگتر می شود، مجبور می شویم این برنامه را به فایل های مختلفی تقسیم کنیم و نمی توانیم تمام برنامه را در یک فایل بنویسیم. به هر کدام از این فایل ها یک ماژول می گوییم چرا که قطعه ای از کد ما را درون خودشان دارند (البته به شرطی که کدهایشان را export کنند). هر ماژول می تواند یک کلاس یا مجموعه ای از توابع یا برخی اطلاعات پایگاه داده یا ثابت ها و یا هر بخشی از کد را داشته باشد.
+              </p>
+              ---
+              ### مثالی از ماژول سیستم
+
+              ```js [1-4|6-9]
+              // => sayHi.js
+              export function sayHi(user) {
+                alert(`Hello, ${user}!`);
+              }
+
+              // => main.js
+              import {sayHi} from './sayHi.js';
+
+              sayHi('John'); // => Hello, John
+              ```
+              ---
+
+              ### (Module bundler) ماژول باندلر 
+              
+              <p class="fragment fade-down">
+                <img src="img/webpack.png" alt="webpack" />
+              </p>
+
+              ---
+              ### درک بهتر از ماژول باندلر
+
+              <div class="r-stack">
+                <img src="img/tree.png" class="fragment fade-in-then-out" alt="tree"/>
+                <img src="img/tree.png"  class="fragment" alt="tree" style="transform: rotate(180deg);"/>
+              </div>
+
+              ---
+              ### (Node.js) نود جی‌اس 
+              
+              <img src="img/node-js.png" class="fragment fade-down" alt="node js" width="200"/>
+
+              <p class="fragment" style="direction: rtl;">
+                Node.js یک پلتفرم سمت سرور مبتنی بر موتور جاوا اسکریپت گوگل کروم (V8 Engine) می‌باشد. Node.JS تمام چیزهایی که برای اجرای یک برنامه نوشته شده به زبان جاوا اسکریپت را نیاز دارید برایتان فراهم می‌کند. 
+                در واقع به کمک Node.js زبان برنامه نویسی جاوا اسکریپت به جای اجرا درمرورگر در محیط سرور اجرا می‌شود
+              </p>
+
+              ---
+
+              #### NPM (Node Package Manager)
+              
+              <img src="img/npm.png" class="fragment fade-up" alt="node js" width="200"/>
+
+              <p class="fragment" style="direction: rtl;">
+                NPM یا همان node package manager، بزرگ‌ترین بستر برای ثبت، نشر، اشتراک‌گذاری، بروزرسانی و استفاده از پکیج‌های جاوااسکریپت است.
+              </p>
+             
+
+
+            </textarea>
+          </section>
+        </section>
+
+
+
+
+        <section data-transition="zoom" data-background-color="#1d976c">
+            <section data-markdown>
+              <textarea data-template>
+                ### (Vue.js) ویو جی‌اس
+                <img src="img/vue.png" alt="vue.js logo" width="250"/>
+
+                <p class="fragment" style="direction: rtl;">
+                  Vue.js یک فریم ورک اوپن سورس جاوا اسکریپت میباشد که برای ساخت اپلیکیشن های تک صفحه ای یا اصطلاحا SPA (single-page application) و همچنین طراحی محیط رابط کاربری مورد استفاده قرار میگرید.
+                </p>
+                ---
+                ### روش های استفاده از ویو
+                
+                CDN 
+
+                ```html
+                <script src="https://unpkg.com/vue@next"></script> <!-- CDN -->
+                ```
+                
+                  NPM
+                ```bash
+                npm init vite@latest <project-name> --template vue
+                ```
+
+                ---
+                ### آشنایی با ساختار ویو
+
+                ```js[|1-6|7-11|12-16|17-21]
+                data(){
+                  return{
+                    message: 'this is a test message',
+                    test: 'a test variable'
+                  }
+                },
+                methods:{
+                  changeMessage(){
+                    this.message = 'another message from a method'
+                  }
+                },
+                computed:{
+                  messageTest(){
+                    return this.message + this.test
+                  }
+                },
+                watch:{
+                  message(newValue,oldValue){
+                    console.log(`new value is: ${newValue}, old value is: ${oldValue}`)
+                  }
+                }
+              
+                ```
+
+                ---
+                ### SFC ساختار 
+
+                ```html
+                <template>
+                  <!-- some html code ... -->
+                </template>
+                ```
+
+                ```css
+                <style>
+                  /* style for the template ... */
+                </style>
+                ```
+
+
+                ```html
+                <script>
+                  export default {
+                    data(){ /*... */ },
+                    methods:{ /*... */ },
+                    computed:{ /*... */ },
+                    watch:{ /*... */ }
+                  }
+                </script>
+                ```
+
+
+                ---
+
+                ###   با ویو SPA ساخت 
+                
+                <p class="fragment" style="direction: rtl;">
+                  برای ساخت SPA باید از روش نصب NPM استفاده کنیم 
+                </p>
+                
+                ---
+
+                ### SPA مسیریاب برای 
+
+                <p class="fragment" style="direction: rtl;">
+                 ویو به صورت رسمی پکیجی برای مسیریابی ارائه کرده است که به راحتی میتوان از آن در پروژه ها استفاده کرد 
+                </p>
+
+                ---
+                
+                ### Nuxt.js
+                <p class="fragment">ناکست چیست؟</p>
+                <p class="fragment" style="direction: rtl;">
+                  در واقع ناکست همان ویو است اما با یک سری امکانات بیشتر و مشکلاتی که ویو داشته را حل کرده است 
+                  
+                </p>
+
+                <p class="fragment" style="direction: rtl;">
+                  مشکلاتی که ویو داشت چه بود؟
+                </p>
+
+                <ul class="fragment" style="direction: rtl;">
+                  <li>سرعت پایین لود اولیه</li>
+                  <li> مشکلات سئو (SEO)</li>
+                </ul>
+                ---
+                
+                ### !‌بریم چند خط کد بزنیم   
+                
+                <p class="fragment fade-up">
+                  <img src="img/code-time.jpg" alt="code time" width="500">
+                </p>
+
+              </textarea>
+            </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
