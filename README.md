@@ -57,7 +57,11 @@
     </li>
     <br />
     <li>
-      <a href="https://youtu.be/shni8yfjP54" target="_blank">قسمت چهاردهم - راه اندازی پروژه با استفاده از محیط متنی و گرافیکی</a>
+      <a href="https://youtu.be/dtiMnC8XEbc" target="_blank">قسمت دوازدهم - پروژه تودو لیست </a>
+    </li>
+    <br />
+    <li>
+      <a href="https://youtu.be/0uGZOMMStJE" target="_blank">قسمت سیزدهم - ماژول سیستم</a>
     </li>
     <br />
     <li>
