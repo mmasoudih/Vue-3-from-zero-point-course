@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import HeaderVue from './components/Header.vue'
+const app = createApp(App)
 
-createApp(App).mount('#app')
+app.component('HeaderVue',HeaderVue)
+
+app.mount('#app')

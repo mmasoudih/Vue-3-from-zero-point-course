@@ -67,6 +67,13 @@
     <li>
       <a href="https://youtu.be/shni8yfjP54" target="_blank">قسمت چهاردهم - راه اندازی پروژه با استفاده از محیط متنی و گرافیکی</a>
     </li>
-    
+    <br />
+    <li>
+      <a href="https://youtu.be/6SpYFt2RBMU" target="_blank">قسمت پانزدهم - معرفی ساختار SFC </a>
+    </li>
+    <br />
+    <li>
+      <a href="https://youtu.be/PF_ul3LvNVQ" target="_blank">قسمت شانزدهم - ایجاد کامپوننت در محیط CLI   </a>
+    </li>    
   </ul>
 </div>
